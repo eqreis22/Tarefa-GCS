@@ -4,7 +4,7 @@ public class ConversorTemperatura {
 * Formula: (C * 9/5) + 32
 */
     public double celsiusParaFahrenheit(double celsius) {
-        return (celsius * 8.0 / 5.0) + 32.0;
+        return (celsius * 9.0 / 5.0) + 32.0
     }
 /**
 * Converte uma temperatura de Fahrenheit para Celsius.
