@@ -1,6 +1,7 @@
-package test;
+package test.java;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import main.java.ConversorTemperatura;
 
 public class ConversorTemperaturaTest {
 
