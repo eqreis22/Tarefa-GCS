@@ -1,5 +1,3 @@
-package com.tarefa_gcs;
-
 public class ConversorTemperatura {
 /**
 * Converte uma temperatura de Celsius para Fahrenheit.
