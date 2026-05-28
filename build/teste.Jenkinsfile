@@ -6,7 +6,7 @@ pipeline {
     // que você configurou em "Global Tool Configuration" no seu Jenkins.
     tools {
         maven 'Maven'
-        jdk 'JDK11' // Ajuste para a versão do Java que você está utilizando
+        jdk 'JDK21' // Ajuste para a versão do Java que você está utilizando
     }
 
     stages {
@@ -39,14 +39,6 @@ pipeline {
                     // mesmo que algum teste falhe (necessário para o Cenário 3).
                     junit 'target/surefire-reports/*.xml'
                 }
-            }
-        }
-
-        stage('Cobertura de Código (Bônus)') {
-            steps {
-                echo 'A gerar métricas de cobertura JaCoCo...'
-                // Requer que o plugin JaCoCo esteja instalado no Jenkins
-                jacoco buildOverBuild: true
             }
         }
     }
