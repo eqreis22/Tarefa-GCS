@@ -29,12 +29,13 @@ pipeline {
         stage('Testes Unitários') {
             steps {
                 echo 'A executar os casos de teste JUnit...'
-                // Alterado de 'sh' para 'bat'
                 bat 'mvn test'
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    // O **/ garante que ele ache a pasta target em qualquer lugar.
+                    // O allowEmptyResults evita que o Cenário 2 gere um erro confuso.
+                    junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true
                 }
             }
         }
