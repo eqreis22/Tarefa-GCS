@@ -18,25 +18,22 @@ pipeline {
             }
         }
 
-        stage('Build (Compilação)') {
+       stage('Build (Compilação)') {
             steps {
                 echo 'A compilar o código fonte...'
-                // Se o seu Jenkins estiver no Windows, mude 'sh' para 'bat'
-                // Exemplo: bat 'mvn clean compile'
-                sh 'mvn clean compile'
+                // Alterado de 'sh' para 'bat'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Testes Unitários') {
             steps {
                 echo 'A executar os casos de teste JUnit...'
-                // Executa os testes. Se um teste falhar aqui, o build fica UNSTABLE/FAILURE
-                sh 'mvn test'
+                // Alterado de 'sh' para 'bat'
+                bat 'mvn test'
             }
             post {
                 always {
-                    // Esta etapa garante que o Jenkins leia os resultados dos testes e crie o gráfico,
-                    // mesmo que algum teste falhe (necessário para o Cenário 3).
                     junit 'target/surefire-reports/*.xml'
                 }
             }
