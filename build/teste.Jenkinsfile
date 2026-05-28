@@ -6,7 +6,7 @@ pipeline {
     // que você configurou em "Global Tool Configuration" no seu Jenkins.
     tools {
         maven 'Maven'
-        jdk 'JDK21' // Ajuste para a versão do Java que você está utilizando
+        jdk 'JDK11' // Ajuste para a versão do Java que você está utilizando
     }
 
     stages {
